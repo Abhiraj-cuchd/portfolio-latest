@@ -1,7 +1,10 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import SectionHeader from "@/components/SectionHeader";
 import Card from "@/components/Card";
+import ScrollStack, { ScrollStackItem } from '@/sections/ui/ScrollStack'
+// import  ScrollStackItem from '@/sections/ui/ScrollStack'
 import { aiStartupLandingPage, ArrowUpRightIcon, CheckCircleIcon, darkSaasLandingPage, lightSaasLandingPage } from "@/assets";
 
 const portfolioProjects = [
@@ -85,7 +88,9 @@ export const ProjectsSection = () => {
     <div className="container">
       <SectionHeader eyebrowText="Real-World Results" title="Featured Projects" description="See how I transformed concepts into engaging digital Experiences" />
       <div className="flex flex-col mt-10 gap-14 md:mt-20">
+
         {portfolioProjects.map((project, index) => (
+
           <Card className={`px-8 pb-0 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky`} style={{
             top: `calc(64px + ${index * 30}px)`
           }} key={index}>
@@ -120,6 +125,7 @@ export const ProjectsSection = () => {
             </div>
           </Card>
         ))}
+
       </div>
     </div>
   </section>;

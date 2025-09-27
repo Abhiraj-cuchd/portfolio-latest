@@ -96,8 +96,19 @@ export const AboutSection = () => {
           </Card>
           <Card className="h-[320px] mt-6 md:mt-0 md:col-span-3 lg:col-span-2">
             <CardHeader className="" title="My Skills" subTitle="Explore the tools I use to craft exceptional digital experiences" />
-            <ToolboxItems className="mt-6" toolboxItems={toolboxItems} />
-            <ToolboxItems className="mt-2" itemsWrapperClassName="-translate-x-1/2" toolboxItems={toolboxItems} />
+            {/* First row - moves left to right */}
+            <ToolboxItems
+              className="mt-6"
+              toolboxItems={toolboxItems}
+              animateLeft={false}
+            />
+            {/* Second row - moves right to left */}
+            <ToolboxItems
+              className="mt-2"
+              itemsWrapperClassName="-translate-x-1/2"
+              toolboxItems={toolboxItems}
+              animateLeft={true}
+            />
           </Card>
         </div>
         <div className="flex flex-col md:grid md:grid-cols-5 gap-8 lg:grid-cols-3">
